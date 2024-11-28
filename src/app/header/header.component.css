@@ -1,0 +1,26 @@
+.navbar {
+  height: 5vh;
+  background-color: rgba(117, 184, 182, 0.55);
+  padding: 2px;
+
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.logo {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.app-name {
+  font-size: 1.5em;
+  color: rgb(13, 101, 142);
+  font-weight: bold;
+}
+
+.mat-raised-button {
+  color: blue;
+  background-color: orange;
+}
