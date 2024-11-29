@@ -1,0 +1,13 @@
+.board-card {
+  width: 250px;
+  height: 100px;
+  margin: 10px;
+
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.board-card-title {
+  padding: 20px 20px;
+  color: white;
+}

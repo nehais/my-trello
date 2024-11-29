@@ -1,0 +1,10 @@
+.footer-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.git-logo {
+  width: 80px;
+  height: 50px;
+}
