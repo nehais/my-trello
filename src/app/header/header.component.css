@@ -9,6 +9,10 @@
   gap: 30px;
 }
 
+.logo-area {
+  cursor: pointer;
+}
+
 .logo {
   width: 20px;
   height: 20px;

@@ -1,5 +1,8 @@
 <div class="dashboard">
-  <div *ngFor="let c of cards">
-    <app-board-card [card]="c"></app-board-card>
+  <div *ngFor="let w of workspaces$ | async">
+    <app-board-card
+      [card]="w"
+      [routerLink]="['/workspace', w.id]"
+    ></app-board-card>
   </div>
 </div>
