@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HomeService } from 'src/app/home/home.service';
+import { Task } from 'src/app/models/task';
 import { Workspace } from 'src/app/models/workspace';
 
 @Component({
@@ -13,6 +14,7 @@ export class WorkspaceComponent implements OnInit {
   workspace: Workspace | undefined;
   workspaces: Workspace[] | undefined;
   sideBarCollapsed: boolean = false;
+  newTask: Task | undefined;
 
   constructor(
     private activatedRoute: ActivatedRoute,

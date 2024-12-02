@@ -1,18 +1,30 @@
 <div class="workspace-area">
+  <!--Side Bar-->
   <app-side-bar
     class="sidebar"
     [workspaces]="workspaces"
     [sideBarCollapsed]="sideBarCollapsed"
     (toggleCollapse)="toggleCollapse()"
   ></app-side-bar>
+
   <div
-    class="workspace"
     [ngClass]="{
       'workspace-collapsed': !sideBarCollapsed,
       'workspace-expanded': sideBarCollapsed
     }"
+    class="workspace"
   >
-    {{ sideBarCollapsed }}
-    <p>{{ workspace && workspace.title }}</p>
+    <div class="workspace-board-title">{{ workspace?.title }}</div>
+    <div class="tasks-list">
+      <app-task-list
+        *ngFor="let task of workspace?.tasks"
+        [task]="task"
+      ></app-task-list>
+
+      <app-task-list
+        *ngFor="let task of workspace?.tasks"
+        [task]="newTask"
+      ></app-task-list>
+    </div>
   </div>
 </div>

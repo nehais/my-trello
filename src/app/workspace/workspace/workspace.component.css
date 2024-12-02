@@ -9,8 +9,16 @@
   padding: 10px;
 }
 
-.workspace {
-  background-color: chartreuse;
+.workspace-board-title {
+  padding: 20px 0 20px 20px;
+  background-color: rgba(170, 206, 212, 0.306);
+
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.tasks-list {
+  padding: 10px;
 }
 
 .workspace-collapsed {
@@ -19,4 +27,9 @@
 
 .workspace-expanded {
   width: 100vw;
+}
+
+.tasks-list {
+  display: flex;
+  gap: 10px;
 }

@@ -1,0 +1,14 @@
+<div class="task-item">
+  <div *ngIf="task" class="loaded-task">
+    <h4 class="task-title">{{ task.taskTitle }}</h4>
+    <div class="task-activity" *ngFor="let a of task.activities">
+      <p>
+        {{ a.name }}
+      </p>
+    </div>
+  </div>
+
+  <div *ngIf="!task" class="new-task">
+    <h4 (click)="addList()" class="add-task-title">+ Add List</h4>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.task-item {
+  width: 200px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.loaded-task {
+  background-color: rgb(154, 206, 188);
+  border-radius: 10px;
+}
+
+.task-title {
+  padding: 15px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.task-activity {
+  margin: 5px;
+  padding: 5px 10px;
+  width: 85%;
+
+  background-color: white;
+  border-radius: 5px;
+}
+
+.task-activity:hover {
+  border: 2px solid blue;
+}
+
+.new-task {
+  background-color: rgba(154, 206, 188, 0.278);
+  border-radius: 10px;
+}
+
+.add-task-title {
+  padding: 15px;
+  margin: 0;
+}
