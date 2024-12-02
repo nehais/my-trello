@@ -1,1 +1,18 @@
-<p>{{ workspace && workspace.title }}</p>
+<div class="workspace-area">
+  <app-side-bar
+    class="sidebar"
+    [workspaces]="workspaces"
+    [sideBarCollapsed]="sideBarCollapsed"
+    (toggleCollapse)="toggleCollapse()"
+  ></app-side-bar>
+  <div
+    class="workspace"
+    [ngClass]="{
+      'workspace-collapsed': !sideBarCollapsed,
+      'workspace-expanded': sideBarCollapsed
+    }"
+  >
+    {{ sideBarCollapsed }}
+    <p>{{ workspace && workspace.title }}</p>
+  </div>
+</div>

@@ -11,6 +11,8 @@ import { Workspace } from 'src/app/models/workspace';
 export class WorkspaceComponent implements OnInit {
   id: number = 0;
   workspace: Workspace | undefined;
+  workspaces: Workspace[] | undefined;
+  sideBarCollapsed: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -22,8 +24,16 @@ export class WorkspaceComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.homeService.getWorkspacesByID(this.id).subscribe((oneWorkspace) => {
-      this.workspace = oneWorkspace;
-    });
+    this.homeService
+      .getWorkspacesByID(this.id)
+      .subscribe((oneWorkspace) => (this.workspace = oneWorkspace));
+
+    this.homeService
+      .getWorkspaces()
+      .subscribe((allWorkspaces) => (this.workspaces = allWorkspaces));
+  }
+
+  toggleCollapse() {
+    this.sideBarCollapsed = !this.sideBarCollapsed;
   }
 }

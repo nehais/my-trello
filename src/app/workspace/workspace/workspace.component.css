@@ -1,0 +1,22 @@
+.workspace-area {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+}
+
+.sidebar {
+  background-color: rgb(234, 232, 230);
+  padding: 10px;
+}
+
+.workspace {
+  background-color: chartreuse;
+}
+
+.workspace-collapsed {
+  width: 85vw;
+}
+
+.workspace-expanded {
+  width: 100vw;
+}

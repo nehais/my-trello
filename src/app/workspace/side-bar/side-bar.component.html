@@ -1,0 +1,32 @@
+<div
+  [ngClass]="{
+    'sidebar-collapsed': sideBarCollapsed,
+    'sidebar-expanded': !sideBarCollapsed
+  }"
+>
+  <div class="sidebar-header-area">
+    <div class="sidebar-header">
+      <h4>My Trello Workspace {{ sideBarCollapsed }}</h4>
+      <div class="collapse" (click)="toggleCollapseSideBar()"></div>
+    </div>
+    <h6>Free</h6>
+  </div>
+
+  <div>
+    <h4 class="sidebar-boards-header">Your boards</h4>
+    <div>
+      <h5 *ngFor="let w of workspaces" class="sidebar-boards-item">
+        {{ w.title }}
+      </h5>
+    </div>
+  </div>
+</div>
+
+<div
+  class="expand"
+  (click)="toggleCollapseSideBar()"
+  [ngClass]="{
+    'sidebar-collapsed': !sideBarCollapsed,
+    'sidebar-expanded': sideBarCollapsed
+  }"
+></div>

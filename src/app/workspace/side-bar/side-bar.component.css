@@ -1,0 +1,63 @@
+.sidebar-collapsed {
+  display: none;
+  width: 0vw;
+}
+
+.sidebar-expanded {
+  display: block;
+  width: 15vw;
+}
+
+.sidebar-header-area {
+  width: 100%;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgb(190, 186, 186);
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar-header h4 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.sidebar-header-area h6 {
+  font-size: 0.8em;
+  margin: 0;
+}
+
+.collapse {
+  width: 25px;
+  height: 25px;
+  background-image: url("/assets/collapse-icon.png");
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.expand {
+  width: 25px;
+  height: 25px;
+  background-image: url("/assets/expand-icon.png");
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.sidebar-boards-header {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.sidebar-boards-item {
+  font-size: 1em;
+  margin: 0 0 5px;
+  cursor: pointer;
+}
