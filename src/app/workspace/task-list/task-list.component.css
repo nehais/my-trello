@@ -5,6 +5,22 @@
   flex-direction: column;
 }
 
+.new-task {
+  background-color: rgba(154, 206, 188, 0.278);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.new-task:hover {
+  color: white;
+  background-color: rgb(93, 130, 117);
+}
+
+.add-task-title {
+  padding: 15px;
+  margin: 0;
+}
+
 .loaded-task {
   background-color: rgb(154, 206, 188);
   border-radius: 10px;
@@ -23,18 +39,60 @@
 
   background-color: white;
   border-radius: 5px;
+
+  position: relative;
 }
 
 .task-activity:hover {
   border: 2px solid blue;
+
+  .edit-button {
+    display: block;
+  }
 }
 
-.new-task {
-  background-color: rgba(154, 206, 188, 0.278);
-  border-radius: 10px;
+.edit-button {
+  display: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 
-.add-task-title {
-  padding: 15px;
+.new-task-activity {
+  margin: 5px;
+  padding: 5px 10px;
+  width: 85%;
+
+  background-color: rgb(154, 206, 188);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.new-task-activity:hover {
+  color: white;
+  background-color: rgb(93, 130, 117);
+}
+
+.new-task-activity h4 {
   margin: 0;
+}
+
+.edit_icon {
+  width: 15px;
+}
+
+.hide-act-add {
+  display: none;
+}
+
+.show-act-add {
+  display: block;
+}
+
+.add-act-button {
+  margin: 5px;
 }

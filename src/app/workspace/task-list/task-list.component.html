@@ -5,6 +5,31 @@
       <p>
         {{ a.name }}
       </p>
+      <button class="edit-button">
+        <img src="/assets/edit.png" class="edit_icon" />
+      </button>
+    </div>
+
+    <div (click)="addNewAct()">
+      <h4
+        [ngClass]="{
+          'show-act-add': !newAct,
+          'hide-act-add': newAct
+        }"
+        class="new-task-activity"
+      >
+        + Add a card
+      </h4>
+      <button
+        mat-flat-button
+        [ngClass]="{
+          'show-act-add': newAct,
+          'hide-act-add': !newAct
+        }"
+        class="add-act-button"
+      >
+        Add
+      </button>
     </div>
   </div>
 
