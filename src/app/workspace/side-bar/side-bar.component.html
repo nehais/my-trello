@@ -15,7 +15,12 @@
   <div>
     <h4 class="sidebar-boards-header">Your boards</h4>
     <div>
-      <h5 *ngFor="let w of workspaces" class="sidebar-boards-item">
+      <h5
+        *ngFor="let w of workspaces"
+        class="sidebar-boards-item"
+        [routerLink]="['/workspace', w.id]"
+        [ngClass]="{ 'active-workspace': workspace && w.id === workspace.id }"
+      >
         {{ w.title }}
       </h5>
     </div>

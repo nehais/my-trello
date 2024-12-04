@@ -7,11 +7,18 @@ import { WorkspaceComponent } from './workspace/workspace/workspace.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'workspace/:id', component: WorkspaceComponent },
+  {
+    path: 'workspace/:id',
+    component: WorkspaceComponent,
+    runGuardsAndResolvers: 'paramsOrQueryParamsChange',
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), WorkspaceModule],
+  imports: [
+    RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' }),
+    WorkspaceModule,
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

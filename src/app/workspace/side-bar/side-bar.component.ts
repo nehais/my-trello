@@ -7,10 +7,10 @@ import { Workspace } from 'src/app/models/workspace';
   styleUrls: ['./side-bar.component.css'],
 })
 export class SideBarComponent {
-  @Input()
-  workspaces: Workspace[] | undefined;
-  @Input()
-  sideBarCollapsed: Boolean = false;
+  @Input() workspace: Workspace | undefined;
+  @Input() workspaces: Workspace[] | undefined;
+  @Input() sideBarCollapsed: Boolean = false;
+
   @Output() toggleCollapse = new EventEmitter<string>();
 
   toggleCollapseSideBar() {

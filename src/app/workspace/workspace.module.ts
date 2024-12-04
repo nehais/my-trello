@@ -4,10 +4,11 @@ import { WorkspaceComponent } from './workspace/workspace.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [WorkspaceComponent, SideBarComponent, TaskListComponent],
-  imports: [CommonModule, MatButtonModule],
+  imports: [CommonModule, MatButtonModule, RouterModule],
   exports: [SideBarComponent],
 })
 export class WorkspaceModule {}

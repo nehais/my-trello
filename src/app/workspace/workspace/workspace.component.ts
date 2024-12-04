@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {
+  Component,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { HomeService } from 'src/app/home/home.service';
 import { Task } from 'src/app/models/task';
 import { Workspace } from 'src/app/models/workspace';
@@ -9,7 +16,8 @@ import { Workspace } from 'src/app/models/workspace';
   templateUrl: './workspace.component.html',
   styleUrls: ['./workspace.component.css'],
 })
-export class WorkspaceComponent implements OnInit {
+export class WorkspaceComponent implements OnInit, OnDestroy {
+  workSubscription: Subscription;
   id: number = 0;
   workspace: Workspace | undefined;
   workspaces: Workspace[] | undefined;
@@ -18,21 +26,27 @@ export class WorkspaceComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private homeService: HomeService
+    private homeService: HomeService,
+    private router: Router
   ) {
-    this.activatedRoute.params.subscribe((params) => {
+    this.workSubscription = this.activatedRoute.params.subscribe((params) => {
       this.id = +params['id'];
+
+      //Moved from ngOnInit for reload on same Navigation
+      this.homeService
+        .getWorkspacesByID(this.id)
+        .subscribe((oneWorkspace) => (this.workspace = oneWorkspace));
+
+      this.homeService
+        .getWorkspaces()
+        .subscribe((allWorkspaces) => (this.workspaces = allWorkspaces));
     });
   }
 
-  ngOnInit(): void {
-    this.homeService
-      .getWorkspacesByID(this.id)
-      .subscribe((oneWorkspace) => (this.workspace = oneWorkspace));
+  ngOnInit(): void {}
 
-    this.homeService
-      .getWorkspaces()
-      .subscribe((allWorkspaces) => (this.workspaces = allWorkspaces));
+  ngOnDestroy(): void {
+    this.workSubscription.unsubscribe();
   }
 
   toggleCollapse() {

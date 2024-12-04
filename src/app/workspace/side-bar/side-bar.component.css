@@ -67,3 +67,7 @@
   color: white;
   background-color: rgb(93, 130, 117);
 }
+
+.active-workspace {
+  background-color: rgba(153, 210, 190, 0.499);
+}
