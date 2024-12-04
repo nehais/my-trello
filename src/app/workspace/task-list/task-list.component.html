@@ -1,16 +1,19 @@
 <div class="task-item">
-  <div *ngIf="task" class="loaded-task">
+  <div *ngIf="task && !newTask" class="loaded-task">
     <h4 class="task-title">{{ task.taskTitle }}</h4>
-    <div class="task-activity" *ngFor="let a of task.activities">
-      <p>
-        {{ a.name }}
-      </p>
+    <div *ngFor="let a of task.activities" class="task-activity">
+      <textarea
+        matInput
+        [(ngModel)]="a.name"
+        class="new-activity-name"
+      ></textarea>
+
       <button class="edit-button">
         <img src="/assets/edit.png" class="edit_icon" />
       </button>
     </div>
 
-    <!--New Activity on Task button-->>
+    <!--New Activity on Task button-->
     <div (click)="addNewAct()">
       <h4
         [ngClass]="{
@@ -21,20 +24,78 @@
       >
         + Add a card
       </h4>
-      <button
-        mat-flat-button
-        [ngClass]="{
-          'show-act-add': newAct,
-          'hide-act-add': !newAct
-        }"
-        class="add-act-button"
-      >
-        Add
-      </button>
+      <div class="add-act-buttons">
+        <button
+          mat-raised-button
+          [ngClass]="{
+            'show-act-add': newAct,
+            'hide-act-add': !newAct
+          }"
+          class="act-button"
+        >
+          Add
+        </button>
+
+        <button
+          mat-flat-button
+          color="cancel"
+          [ngClass]="{
+            'show-act-add': newAct,
+            'hide-act-add': !newAct
+          }"
+          class="act-button"
+        >
+          X
+        </button>
+      </div>
     </div>
   </div>
 
-  <div *ngIf="!task" class="new-task">
-    <h4 (click)="addList()" class="add-task-title">+ Add List</h4>
+  <div
+    *ngIf="!task || newTask"
+    [ngClass]="{ 'new-task': !task, 'loaded-task': newTask }"
+    (click)="addList()"
+  >
+    <input
+      matInput
+      [(ngModel)]="task.taskTitle"
+      *ngIf="task && newTask"
+      class="new-task-title"
+    />
+
+    <h4
+      [ngClass]="{
+        'show-task-add': !newTask,
+        'hide-task-add': newTask
+      }"
+      class="add-task-title"
+    >
+      + Add List
+    </h4>
+
+    <div class="add-task-buttons">
+      <button
+        mat-raised-button
+        [ngClass]="{
+          'show-task-add': newTask,
+          'hide-task-add': !newTask
+        }"
+        class="task-button"
+      >
+        Add
+      </button>
+
+      <button
+        mat-flat-button
+        color="cancel"
+        [ngClass]="{
+          'show-task-add': newTask,
+          'hide-task-add': !newTask
+        }"
+        class="task-button"
+      >
+        X
+      </button>
+    </div>
   </div>
 </div>

@@ -16,6 +16,29 @@
   background-color: rgb(93, 130, 117);
 }
 
+.new-task-title {
+  margin: 5px;
+  padding: 5px 10px;
+  width: 85%;
+  min-height: 20px;
+
+  background-color: white;
+  border-radius: 5px;
+
+  position: relative;
+}
+
+.new-task-title {
+  margin: 5px;
+  padding: 5px 10px;
+  width: 85%;
+
+  background-color: white;
+  border-radius: 5px;
+
+  position: relative;
+}
+
 .add-task-title {
   padding: 15px;
   margin: 0;
@@ -33,22 +56,30 @@
 }
 
 .task-activity {
-  margin: 5px;
-  padding: 5px 10px;
-  width: 85%;
-
-  background-color: white;
-  border-radius: 5px;
-
   position: relative;
 }
 
 .task-activity:hover {
-  border: 2px solid blue;
-
   .edit-button {
     display: block;
   }
+}
+
+.new-activity-name {
+  margin: 5px;
+  padding: 5px 10px;
+  width: 85%;
+  height: max-content; /* Ensures no static height is applied */
+  resize: none; /* Prevents manual resizing if undesired */
+  overflow-y: hidden; /* Allows smooth height expansion */
+
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.new-activity-name:hover {
+  border: 2px solid blue;
 }
 
 .edit-button {
@@ -60,6 +91,7 @@
   position: absolute;
   right: 5px;
   top: 5px;
+  z-index: 10;
 }
 
 .new-task-activity {
@@ -93,6 +125,37 @@
   display: block;
 }
 
-.add-act-button {
+.add-act-buttons {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.act-button {
+  margin: 5px;
+}
+
+.mat-cancel {
+  background-color: transparent;
+  color: black;
+}
+
+.mat-cancel:hover {
+  background-color: rgb(93, 130, 117);
+}
+
+.hide-task-add {
+  display: none;
+}
+
+.show-task-add {
+  display: block;
+}
+
+.add-task-buttons {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.task-button {
   margin: 5px;
 }
