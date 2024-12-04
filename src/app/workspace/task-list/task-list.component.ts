@@ -13,7 +13,7 @@ export class TaskListComponent {
   newAct: boolean = false;
   newTask: boolean = false;
 
-  addList() {
+  addNewList() {
     let newTask: Task = {
       taskId: 10,
       taskTitle: '',
@@ -23,9 +23,25 @@ export class TaskListComponent {
     this.newTask = true;
   }
 
+  cancelNewList() {
+    if (this.task) {
+      this.task = undefined;
+      this.newTask = false;
+    }
+  }
+
   addNewAct() {
+    if (this.newAct) return;
+
     let newTaskAct: taskActivity = { taskActId: 10, name: '', desc: '' };
     this.task?.activities.push(newTaskAct);
     this.newAct = true;
+  }
+
+  cancelNewAct() {
+    if (this.task && this.task.activities) {
+      this.task.activities.splice(this.task.activities.length - 1, 1);
+      this.newAct = false;
+    }
   }
 }

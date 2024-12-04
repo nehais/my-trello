@@ -14,13 +14,14 @@
     </div>
 
     <!--New Activity on Task button-->
-    <div (click)="addNewAct()">
+    <div>
       <h4
         [ngClass]="{
           'show-act-add': !newAct,
           'hide-act-add': newAct
         }"
         class="new-task-activity"
+        (click)="addNewAct()"
       >
         + Add a card
       </h4>
@@ -44,6 +45,7 @@
             'hide-act-add': !newAct
           }"
           class="act-button"
+          (click)="cancelNewAct()"
         >
           X
         </button>
@@ -54,7 +56,6 @@
   <div
     *ngIf="!task || newTask"
     [ngClass]="{ 'new-task': !task, 'loaded-task': newTask }"
-    (click)="addList()"
   >
     <input
       matInput
@@ -69,6 +70,7 @@
         'hide-task-add': newTask
       }"
       class="add-task-title"
+      (click)="addNewList()"
     >
       + Add List
     </h4>
@@ -93,6 +95,7 @@
           'hide-task-add': !newTask
         }"
         class="task-button"
+        (click)="cancelNewList()"
       >
         X
       </button>
