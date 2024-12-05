@@ -1,0 +1,43 @@
+.task-activity {
+  position: relative;
+}
+
+.task-activity:hover {
+  .edit-button {
+    display: block;
+    background-color: white;
+  }
+}
+
+.new-activity-name {
+  margin: 5px;
+  padding: 5px 10px;
+  width: 85%;
+  height: max-content; /* Ensures no static height is applied */
+  resize: none; /* Prevents manual resizing if undesired */
+  overflow-y: hidden; /* Allows smooth height expansion */
+
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.new-activity-name:hover {
+  border: 2px solid blue;
+}
+
+.edit-button {
+  display: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  z-index: 10;
+}
+
+.edit_icon {
+  width: 15px;
+}

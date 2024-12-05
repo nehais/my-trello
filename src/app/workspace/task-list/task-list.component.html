@@ -1,56 +1,17 @@
 <div class="task-item">
   <div *ngIf="task && !newTask" class="loaded-task">
+    <!--Task Title-->
     <h4 class="task-title">{{ task.taskTitle }}</h4>
-    <div *ngFor="let a of task.activities" class="task-activity">
-      <textarea
-        matInput
-        [(ngModel)]="a.name"
-        class="new-activity-name"
-      ></textarea>
 
-      <button class="edit-button">
-        <img src="/assets/edit.png" class="edit_icon" />
-      </button>
-    </div>
+    <!--Activities List-->
+    <app-task-activity [activities]="task.activities"></app-task-activity>
 
     <!--New Activity on Task button-->
-    <div>
-      <h4
-        [ngClass]="{
-          'show-act-add': !newAct,
-          'hide-act-add': newAct
-        }"
-        class="new-task-activity"
-        (click)="addNewAct()"
-      >
-        + Add a card
-      </h4>
-      <div class="add-act-buttons">
-        <button
-          mat-raised-button
-          [ngClass]="{
-            'show-act-add': newAct,
-            'hide-act-add': !newAct
-          }"
-          class="act-button"
-        >
-          Add
-        </button>
-
-        <button
-          mat-flat-button
-          color="cancel"
-          [ngClass]="{
-            'show-act-add': newAct,
-            'hide-act-add': !newAct
-          }"
-          class="act-button"
-          (click)="cancelNewAct()"
-        >
-          X
-        </button>
-      </div>
-    </div>
+    <app-add-button
+      actionTitle="Add a card"
+      (addNewData)="addNewAct()"
+      (cancelNewData)="cancelNewAct()"
+    ></app-add-button>
   </div>
 
   <div
@@ -64,41 +25,11 @@
       class="new-task-title"
     />
 
-    <h4
-      [ngClass]="{
-        'show-task-add': !newTask,
-        'hide-task-add': newTask
-      }"
-      class="add-task-title"
-      (click)="addNewList()"
-    >
-      + Add List
-    </h4>
-
-    <div class="add-task-buttons">
-      <button
-        mat-raised-button
-        [ngClass]="{
-          'show-task-add': newTask,
-          'hide-task-add': !newTask
-        }"
-        class="task-button"
-      >
-        Add
-      </button>
-
-      <button
-        mat-flat-button
-        color="cancel"
-        [ngClass]="{
-          'show-task-add': newTask,
-          'hide-task-add': !newTask
-        }"
-        class="task-button"
-        (click)="cancelNewList()"
-      >
-        X
-      </button>
-    </div>
+    <!--New Activity on Task button-->
+    <app-add-button
+      actionTitle="Add List"
+      (addNewData)="addNewList()"
+      (cancelNewData)="cancelNewList()"
+    ></app-add-button>
   </div>
 </div>

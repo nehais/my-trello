@@ -1,0 +1,36 @@
+<h4
+  [ngClass]="{
+    'show-add': !newData,
+    'hide-add': newData
+  }"
+  class="new-action-title"
+  (click)="handleAdd()"
+>
+  + {{ actionTitle }}
+</h4>
+
+<div class="add-buttons">
+  <button
+    mat-raised-button
+    [ngClass]="{
+      'show-add': newData,
+      'hide-add': !newData
+    }"
+    class="action-button"
+  >
+    Add
+  </button>
+
+  <button
+    mat-flat-button
+    color="cancel"
+    [ngClass]="{
+      'show-add': newData,
+      'hide-add': !newData
+    }"
+    class="action-button"
+    (click)="handleCancel()"
+  >
+    X
+  </button>
+</div>

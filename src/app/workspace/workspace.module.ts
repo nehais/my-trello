@@ -8,9 +8,11 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { TaskActivityComponent } from './task-activity/task-activity.component';
+import { AddButtonComponent } from './add-button/add-button.component';
 
 @NgModule({
-  declarations: [WorkspaceComponent, SideBarComponent, TaskListComponent],
+  declarations: [WorkspaceComponent, SideBarComponent, TaskListComponent, TaskActivityComponent, AddButtonComponent],
   imports: [
     CommonModule,
     MatButtonModule,

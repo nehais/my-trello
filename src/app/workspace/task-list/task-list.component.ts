@@ -10,16 +10,15 @@ import { taskActivity } from 'src/app/models/task-activity';
 export class TaskListComponent {
   @Input()
   task: Task | undefined;
-  newAct: boolean = false;
   newTask: boolean = false;
 
   addNewList() {
-    let newTask: Task = {
+    let emptyTask: Task = {
       taskId: 10,
       taskTitle: '',
       activities: [{ taskActId: 10, name: '', desc: '' }],
     };
-    this.task = newTask;
+    this.task = emptyTask;
     this.newTask = true;
   }
 
@@ -31,17 +30,13 @@ export class TaskListComponent {
   }
 
   addNewAct() {
-    if (this.newAct) return;
-
     let newTaskAct: taskActivity = { taskActId: 10, name: '', desc: '' };
     this.task?.activities.push(newTaskAct);
-    this.newAct = true;
   }
 
   cancelNewAct() {
     if (this.task && this.task.activities) {
       this.task.activities.splice(this.task.activities.length - 1, 1);
-      this.newAct = false;
     }
   }
 }

@@ -1,0 +1,7 @@
+<div *ngFor="let a of activities" class="task-activity">
+  <textarea matInput [(ngModel)]="a.name" class="new-activity-name"></textarea>
+
+  <button class="edit-button">
+    <img src="/assets/edit.png" class="edit_icon" />
+  </button>
+</div>

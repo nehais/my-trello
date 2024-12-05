@@ -1,0 +1,43 @@
+.show-add {
+  display: block;
+}
+
+.hide-add {
+  display: none;
+}
+
+.new-action-title {
+  margin: 5px;
+  padding: 5px 10px;
+  width: 85%;
+
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.new-action-title:hover {
+  color: white;
+  background-color: rgb(93, 130, 117);
+}
+
+.new-action-title h4 {
+  margin: 0;
+}
+
+.add-buttons {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.action-button {
+  margin: 5px;
+}
+
+.mat-cancel {
+  background-color: transparent;
+  color: black;
+}
+
+.mat-cancel:hover {
+  background-color: rgb(93, 130, 117);
+}
