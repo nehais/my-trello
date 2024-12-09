@@ -24,6 +24,7 @@
 
 .new-activity-name:hover {
   border: 2px solid blue;
+  cursor: pointer;
 }
 
 .edit-button {
