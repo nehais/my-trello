@@ -41,3 +41,9 @@
 .mat-cancel:hover {
   background-color: rgb(93, 130, 117);
 }
+
+h4 {
+  user-select: none;
+  -webkit-user-select: none; /* For Safari */
+  -ms-user-select: none; /* For older IE versions */
+}

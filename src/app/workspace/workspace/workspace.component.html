@@ -16,7 +16,7 @@
     class="workspace"
   >
     <div class="workspace-board-title">{{ workspace?.title }}</div>
-    <div class="tasks-list">
+    <div class="tasks-list" cdkDropListGroup>
       <app-task-list
         *ngFor="let task of workspace?.tasks"
         [task]="task"

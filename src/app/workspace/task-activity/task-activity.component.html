@@ -1,5 +1,17 @@
-<div *ngFor="let a of activities" class="task-activity">
-  <textarea matInput [(ngModel)]="a.name" class="new-activity-name"></textarea>
+<div
+  cdkDropList
+  [cdkDropListData]="activities"
+  *ngFor="let a of activities"
+  class="task-activity"
+  (cdkDropListDropped)="drop($event)"
+>
+  <textarea
+    matInput
+    [(ngModel)]="a.name"
+    class="new-activity-name"
+    cdkDrag
+    readonly
+  ></textarea>
 
   <button class="edit-button">
     <img src="/assets/edit.png" class="edit_icon" />

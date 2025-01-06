@@ -37,3 +37,9 @@
 
   position: relative;
 }
+
+h4 {
+  user-select: none;
+  -webkit-user-select: none; /* For Safari */
+  -ms-user-select: none; /* For older IE versions */
+}

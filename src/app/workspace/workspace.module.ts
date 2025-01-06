@@ -10,9 +10,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { TaskActivityComponent } from './task-activity/task-activity.component';
 import { AddButtonComponent } from './add-button/add-button.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
-  declarations: [WorkspaceComponent, SideBarComponent, TaskListComponent, TaskActivityComponent, AddButtonComponent],
+  declarations: [
+    WorkspaceComponent,
+    SideBarComponent,
+    TaskListComponent,
+    TaskActivityComponent,
+    AddButtonComponent,
+  ],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -20,6 +27,7 @@ import { AddButtonComponent } from './add-button/add-button.component';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    DragDropModule,
   ],
   exports: [SideBarComponent],
 })

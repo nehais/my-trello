@@ -23,6 +23,7 @@
 }
 
 .new-activity-name:hover {
+  cursor: pointer;
   border: 2px solid blue;
 }
 
