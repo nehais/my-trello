@@ -10,10 +10,10 @@
     [(ngModel)]="a.name"
     class="new-activity-name"
     cdkDrag
-    readonly
+    [readonly]="a.new ? false : true"
   ></textarea>
 
-  <button class="edit-button">
+  <button class="edit-button" (click)="openEditActForm()">
     <img src="/assets/edit.png" class="edit_icon" />
   </button>
 </div>
