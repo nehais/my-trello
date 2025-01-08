@@ -1,0 +1,10 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Adds space between fields */
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center;
+}

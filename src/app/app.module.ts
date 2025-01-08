@@ -7,7 +7,7 @@ import { HeaderModule } from './header/header.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './home/home.module';
 import { FooterModule } from './footer/footer.module';
-
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -18,7 +18,7 @@ import { FooterModule } from './footer/footer.module';
     FooterModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-US' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

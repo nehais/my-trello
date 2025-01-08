@@ -13,6 +13,8 @@ import { AddButtonComponent } from './add-button/add-button.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ActivityFormComponent } from './activity-form/activity-form.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { ActivityFormComponent } from './activity-form/activity-form.component';
     MatInputModule,
     DragDropModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   exports: [SideBarComponent],
 })

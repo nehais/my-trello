@@ -34,15 +34,16 @@ export class TaskActivityComponent {
     }
   }
 
-  openEditActForm(): void {
+  openEditActForm(activity: taskActivity): void {
     const dialogRef = this.dialog.open(ActivityFormComponent, {
-      //data: {name: this.name(), animal: this.animal()},
+      data: activity,
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
+    dialogRef.afterClosed().subscribe((result: taskActivity) => {
       console.log('The dialog was closed');
       if (result !== undefined) {
-        //this.animal.set(result);
+        activity.desc = result.desc;
+        activity.date = result.date;
       }
     });
   }

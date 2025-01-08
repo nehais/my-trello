@@ -1,12 +1,31 @@
-<h2 mat-dialog-title>Hi Zebra</h2>
-<mat-dialog-content>
-  <p>What's your favorite animal?</p>
+<h2 mat-dialog-title>{{ this.activity.name }}</h2>
+<mat-dialog-content class="form-container">
   <mat-form-field>
-    <mat-label>Favorite Animal</mat-label>
-    <input matInput />
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]="this.activity.desc"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Due date</mat-label>
+    <input
+      matInput
+      [matDatepicker]="datepicker"
+      [(ngModel)]="this.activity.date"
+    />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle
+      matIconSuffix
+      [for]="datepicker"
+    ></mat-datepicker-toggle>
+    <mat-datepicker #datepicker>
+      <mat-datepicker-actions>
+        <button mat-button matDatepickerCancel>Cancel</button>
+        <button mat-raised-button matDatepickerApply>Apply</button>
+      </mat-datepicker-actions>
+    </mat-datepicker>
   </mat-form-field>
 </mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button cdkFocusInitial>Ok</button>
+<mat-dialog-actions class="form-buttons">
+  <button mat-button color="warn" (click)="onNoClick()">Cancel</button>
+  <button mat-button cdkFocusInitial (click)="onNoClick()">Ok</button>
 </mat-dialog-actions>

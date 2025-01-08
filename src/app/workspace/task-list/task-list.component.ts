@@ -16,7 +16,9 @@ export class TaskListComponent {
     let emptyTask: Task = {
       taskId: 10,
       taskTitle: '',
-      activities: [{ taskActId: 10, name: '', desc: '', new: true }],
+      activities: [
+        { taskActId: 10, name: '', desc: '', date: new Date(0), new: true },
+      ],
     };
     this.task = emptyTask;
     this.newTask = true;
@@ -34,6 +36,7 @@ export class TaskListComponent {
       taskActId: 10,
       name: '',
       desc: '',
+      date: new Date(0),
       new: true,
     };
     this.task?.activities.push(newTaskAct);

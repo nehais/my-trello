@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { taskActivity } from 'src/app/models/task-activity';
 
 @Component({
   selector: 'app-activity-form',
@@ -8,9 +9,8 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class ActivityFormComponent {
   readonly dialogRef = inject(MatDialogRef<ActivityFormComponent>);
-  //readonly data = inject<DialogData>(MAT_DIALOG_DATA);
-  //readonly animal = model(this.data.animal);
-
+  readonly data = inject<taskActivity>(MAT_DIALOG_DATA);
+  activity = this.data;
   onNoClick(): void {
     this.dialogRef.close();
   }
