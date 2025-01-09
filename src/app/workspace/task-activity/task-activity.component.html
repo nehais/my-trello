@@ -1,19 +1,26 @@
 <div
   cdkDropList
   [cdkDropListData]="activities"
-  *ngFor="let a of activities"
-  class="task-activity"
   (cdkDropListDropped)="drop($event)"
 >
-  <textarea
-    matInput
-    [(ngModel)]="a.name"
-    class="new-activity-name"
-    cdkDrag
-    [readonly]="a.new ? false : true"
-  ></textarea>
+  <!-- Check if activities is empty -->
+  <ng-container *ngIf="activities.length > 0; else emptyList">
+    <div *ngFor="let a of activities" cdkDrag class="task-activity">
+      <textarea
+        matInput
+        [(ngModel)]="a.name"
+        class="new-activity-name task-activity"
+        [readonly]="a.new ? false : true"
+      ></textarea>
 
-  <button class="edit-button" (click)="openEditActForm(a)">
-    <img src="/assets/edit.png" class="edit_icon" />
-  </button>
+      <button class="edit-button" (click)="openEditActForm(a)">
+        <img src="/assets/edit.png" class="edit_icon" />
+      </button>
+    </div>
+  </ng-container>
+
+  <!-- Placeholder for empty list -->
+  <ng-template #emptyList>
+    <div class="empty-placeholder" cdkDrag></div>
+  </ng-template>
 </div>
