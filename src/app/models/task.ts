@@ -5,3 +5,8 @@ export interface Task {
   taskTitle: string;
   activities: taskActivity[];
 }
+
+export interface NewTask {
+  taskTitle: string;
+  activities: taskActivity[];
+}
